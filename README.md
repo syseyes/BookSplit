@@ -5,6 +5,7 @@ version 0.1
 Made in Autohotkey by jbarcelo
 Adapted from BookCrop from nod5.dcmembers.com 
 Free Software -- http://www.gnu.org/licenses/gpl-3.0.html
+
 Tested in Win7 x64
 
 WHAT IT DOES
