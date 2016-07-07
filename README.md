@@ -2,7 +2,7 @@
 Allows to split a set of images of a two-pages scanned book in two files in a fast way.
 BookSplit
 version 0.1
-Made in Autohotkey by jbarcelo
+<p/>Made in Autohotkey by jbarcelo
 Adapted from BookCrop from nod5.dcmembers.com 
 Free Software -- http://www.gnu.org/licenses/gpl-3.0.html
 
