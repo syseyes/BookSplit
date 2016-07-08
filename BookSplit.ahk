@@ -257,8 +257,8 @@ pic:
 
     MouseGetPos, xo  
 	x :=0 , y :=0, w :=round( xo/prop ) , h :=imgh
-    lx :=Round(xo/prop) -1, ly :=0, lw :=Round( (sw-xo)/prop ), lh :=imgh
-	
+    lx := w, ly :=0, lw :=imgw-w, lh :=imgh
+
 	; SPLIT
 	xdir2:= determinePath(ado,  ar, xdir,subdir, xtimestart)
     SplitPath, currentFile,xname,,,xnoext 
@@ -266,14 +266,14 @@ pic:
 	  
 	
 	if (xext == "tif")
-		{
+		{    Run "%cropper%" convert  -crop %W%x%H%+%X%+%Y% "%currentFile%""%xdir2%\%xnoext%_L.%xext%" ,,hide
 			 Run "%cropper%" convert  -crop %LW%x%LH%+%LX%+%LY% "%currentFile%" "%xdir2%\%xnoext%_R.%xext%",,hide
-			 Run "%cropper%" convert  -crop %W%x%H%+%X%+%Y% "%currentFile%""%xdir2%\%xnoext%_L.%xext%" ,,hide
+			 
 		}
 		else   ;jpg
-		{
+		{   Run "%cropper%"  -crop %W%x%H%+%X%+%Y% -outfile "%xdir2%\%xnoext%_L.%xext%" "%currentFile%",,hide
 			Run "%cropper%"  -crop %LW%x%LH%+%LX%+%LY% -outfile "%xdir2%\%xnoext%_R.%xext%" "%currentFile%",,hide
-			Run "%cropper%"  -crop %W%x%H%+%X%+%Y% -outfile "%xdir2%\%xnoext%_L.%xext%" "%currentFile%",,hide
+			
 		}
 		sleep 10
 	
